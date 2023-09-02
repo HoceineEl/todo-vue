@@ -13,31 +13,34 @@ const onSubmit = () => {
     todo.content = "";
     return;
   }
-  setTimeout(() => {
-    todo.errMsg = "";
-    todo.invalid = null;
-  }, 3000);
+  // setTimeout(() => {
+  //   todo.errMsg = "";
+  //   todo.invalid = null;
+  // }, 3000);
   todo.invalid = true;
   todo.errMsg = "Cannot set an empty string";
 };
 </script>
 <template>
   <div class="container flex items-center flex-col mx-auto">
-    <div class="overflow-hidden rounded-md w-fit my-4">
+    <div
+      class="rounded-md w-fit my-4 focus-within:shadow-lg focus-within:shadow-purple-200"
+    >
       <input
         type="text"
-        class="w-80 h-8 focus:outline-none px-3 border-2 border-orange-300 border-r-0"
+        class="w-80 h-8 text-gray-400 focus:outline-none px-3 border-2 border-purple-300 border-r-0"
+        :class="{ 'border-red-400': todo.invalid }"
         v-model="todo.content"
         id=""
       />
       <button
         @click="onSubmit()"
-        class="h-8 px-3 bg-orange-300 border-none text-white font-semibold"
+        class="h-8 px-3 bg-purple-300 border-none text-white font-semibold"
       >
         Create
       </button>
     </div>
-    <p v-if="todo.invalid" class="text-sm -ms-56 -mt-3 text-red-500">
+    <p v-if="todo.invalid" class="text-sm -mt-1 text-purple-300">
       {{ todo.errMsg }}
     </p>
   </div>
