@@ -43,3 +43,29 @@ Welcome to the Vue.js Todo App! This simple and intuitive application allows you
 ## Conclusion
 
 Enjoy using this Vue.js Todo App to keep your tasks organized and efficiently manage your to-do list. It's a straightforward and user-friendly tool to help you stay on top of your tasks. Happy task management!
+
+## Recommended IDE Setup
+
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
