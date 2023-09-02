@@ -22,13 +22,13 @@ defineEmits([
 
 <template>
   <li
-    class="flex w-[30rem] items-center transition duration-2000 relative rounded-lg p-4 bg-gray-200 gap-5 hover:shadow-lg group hover:shadow-purple-200 mb-4 mx-10"
+    class="flex w-[30rem] items-center relative rounded-lg p-4 bg-gray-200 gap-5 hover:shadow-lg group hover:shadow-gray-300 mb-4 mx-10 transition-all duration-500 hover:scale-105"
   >
     <input
       type="checkbox"
       @input="$emit('toggle-complete', index)"
       :checked="todo.isComplete"
-      class="rounded-full appearance-none w-6 h-6 border-2 border-purple-500 checked:bg-purple-500"
+      class="rounded-full appearance-none w-6 h-6 shadow-md shadow-gray-600 checked:bg-purple-500 bg-slate-100"
     />
     <div class="">
       <input

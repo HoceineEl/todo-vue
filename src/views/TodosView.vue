@@ -1,12 +1,23 @@
 <script setup>
 import TodoCreator from "../components/TodoCreator.vue";
-import { ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { uid } from "uid";
 import TodoItem from "../components/TodoItem.vue";
+import { Icon } from "@iconify/vue";
 let todoList = ref([]);
-const setTodoListToLocalStorage = () => {
-  localStorage.setItem("todoList", JSON.stringify(todoList.value));
-};
+watch(
+  todoList,
+  () => {
+    localStorage.setItem("todoList", JSON.stringify(todoList.value));
+  },
+  {
+    deep: true,
+  }
+);
+const todosCompleted = computed(() => {
+  return todoList.value.every((todo)=>todo.isComplete)
+})
+console.log(todosCompleted)
 const fetchTodoList = () => {
   const todoValue = JSON.parse(localStorage.getItem("todoList"));
   if (todoValue) {
@@ -20,28 +31,22 @@ const addTodo = (todo) => {
     todo,
     isComplete: false,
     isEditing: false,
-  });
-  setTodoListToLocalStorage();
+  })
 };
 const deleteTodo = (index) => {
-  todoList.value.splice(index, 1);
-  setTodoListToLocalStorage();
+  todoList.value.splice(index, 1)
 };
 const editTodo = (index) => {
-  todoList.value[index].isEditing = true;
-  setTodoListToLocalStorage();
+  todoList.value[index].isEditing = true
 };
 const onToggleComplete = (index) => {
-  todoList.value[index].isComplete = !todoList.value[index].isComplete;
-  setTodoListToLocalStorage();
+  todoList.value[index].isComplete = !todoList.value[index].isComplete
 };
 const onCompleteEditing = (index) => {
-  todoList.value[index].isEditing = false;
-  setTodoListToLocalStorage();
+  todoList.value[index].isEditing = false
 };
 const onUpdateTodo = (value, index) => {
-  todoList.value[index].todo = value;
-  setTodoListToLocalStorage();
+  todoList.value[index].todo = value
 };
 </script>
 
@@ -50,6 +55,11 @@ const onUpdateTodo = (value, index) => {
     Create Todo
   </h2>
   <TodoCreator @form-submitted="addTodo" />
+  <p class="flex gap-4 justify-center" v-if="todoList.length==0">
+    <Icon icon="noto-v1:sad-but-relieved-face" width="20" ></Icon>
+    <p class="text-sm text-gray-600">You have no todo's to complete ! Add one!</p>
+  </p>
+
   <ul class="text-center flex items-center flex-col">
     <TodoItem
       v-for="(todo, index) in todoList"
@@ -63,4 +73,8 @@ const onUpdateTodo = (value, index) => {
       :index="index"
     ></TodoItem>
   </ul>
+  <p class="flex gap-4 justify-center m-4 transition-all duration-1000 "  v-show="todosCompleted">
+    <Icon icon="noto-v1:party-popper" width="20" ></Icon>
+    <p class="text-sm text-gray-600">You have complete all your tasks!</p>
+  </p>
 </template>
