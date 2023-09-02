@@ -25,9 +25,10 @@
 
           <!-- New Drag and Drop Instruction -->
           <li class="mb-2">
-            To rearrange your tasks, you can now use drag-and-drop! Simply click
-            and hold on a task, then drag it to your desired position within the
-            list.
+            To rearrange your tasks, you can now use
+            <p class="font-bold text-purple-600">drag-and-drop</p>
+            ! Simply click and hold on a task, then drag it to your desired
+            position within the list.
           </li>
         </ol>
       </div>
