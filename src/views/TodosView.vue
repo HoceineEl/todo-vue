@@ -73,7 +73,7 @@ const onUpdateTodo = (value, index) => {
       :index="index"
     ></TodoItem>
   </ul>
-  <p class="flex gap-4 justify-center m-4 transition-all duration-1000 "  v-show="todosCompleted">
+  <p class="flex gap-4 justify-center m-4 transition-all duration-1000 "  v-show="todosCompleted && todoList.length>0">
     <Icon icon="noto-v1:party-popper" width="20" ></Icon>
     <p class="text-sm text-gray-600">You have complete all your tasks!</p>
   </p>

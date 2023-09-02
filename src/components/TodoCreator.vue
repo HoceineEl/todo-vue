@@ -22,7 +22,7 @@ const onSubmit = () => {
 };
 </script>
 <template>
-  <div class="container flex justify-center mx-auto">
+  <div class="container flex items-center flex-col mx-auto">
     <div
       class="w-fit h-10 my-4 focus-within:shadow-lg focus-within:shadow-purple-200"
     >
