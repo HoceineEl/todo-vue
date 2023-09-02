@@ -34,6 +34,10 @@ Welcome to the Vue.js Todo App! This simple and intuitive application allows you
 
 2. The task will be promptly deleted from your list.
 
+### Drag-and-Drop Capability
+
+1. **New Feature:** We've added a drag-and-drop capability to enhance your task management experience. You can now easily rearrange tasks by clicking and dragging them to your desired position within the list.
+
 ### Task Status
 
 1. If you manage to complete all your tasks, you'll see a celebratory message at the bottom of the page.
