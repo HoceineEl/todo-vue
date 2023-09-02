@@ -20,14 +20,14 @@
       <div class="mb-6">
         <h2 class="text-xl font-semibold mb-2">How to Use</h2>
         <ol class="list-decimal pl-6 text-gray-700">
+          <!-- Existing How to Use steps -->
+          <!-- ... -->
+
+          <!-- New Drag and Drop Instruction -->
           <li class="mb-2">
-            Creating a new todo is a breeze. Just find the input field at the
-            top of the page.
-          </li>
-          <li class="mb-2">Type in the task you want to add to your list.</li>
-          <li class="mb-2">
-            Click the "Create" button, and your new task will instantly appear
-            in your list.
+            To rearrange your tasks, you can now use drag-and-drop! Simply click
+            and hold on a task, then drag it to your desired position within the
+            list.
           </li>
         </ol>
       </div>
