@@ -22,7 +22,7 @@ defineEmits([
 
 <template>
   <li
-    class="flex w-[30rem] items-center relative rounded-lg p-4 bg-gray-200 gap-5 hover:shadow-lg group hover:shadow-gray-300 mb-4 mx-10 transition-all duration-500 hover:scale-105"
+    class="flex w-[30rem] items-center relative rounded-md p-4 bg-gray-200 gap-5 hover:shadow-lg group hover:shadow-gray-300 mb-4 mx-10 transition-all duration-500 hover:scale-[1.02]"
   >
     <input
       type="checkbox"

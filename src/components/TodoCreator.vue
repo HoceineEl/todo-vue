@@ -22,20 +22,20 @@ const onSubmit = () => {
 };
 </script>
 <template>
-  <div class="container flex items-center flex-col mx-auto">
+  <div class="container flex justify-center mx-auto">
     <div
-      class="rounded-md w-fit my-4 focus-within:shadow-lg focus-within:shadow-purple-200"
+      class="w-fit h-10 my-4 focus-within:shadow-lg focus-within:shadow-purple-200"
     >
       <input
         type="text"
-        class="w-80 h-8 text-gray-400 focus:outline-none px-3 border-2 border-purple-300 border-r-0"
+        class="w-[28rem] rounded-ss-md h-10 text-gray-400 focus:outline-none px-3 border-2 border-purple-300 border-r-0"
         :class="{ 'border-red-400': todo.invalid }"
         v-model="todo.content"
         id=""
       />
       <button
         @click="onSubmit()"
-        class="h-8 px-3 bg-purple-300 border-none text-white font-semibold"
+        class="h-10 px-3 bg-purple-300 border-none rounded-ee-md text-white font-semibold"
       >
         Create
       </button>
