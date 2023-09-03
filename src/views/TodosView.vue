@@ -67,7 +67,7 @@
   <TodoCreator @form-submitted="addTodo" />
   <p class="flex gap-4 justify-center" v-if="todoList.length==0">
     <Icon icon="noto-v1:sad-but-relieved-face" width="20"></Icon>
-    <p class="text-sm text-gray-600 ">You have no todo's to complete ! Add one!</p>
+    <p class="text-sm text-gray-200 ">You have no todo's to complete ! Add one!</p>
   </p>
   <Draggable  class="flex items-center flex-col"  
    v-model="todoList" 
