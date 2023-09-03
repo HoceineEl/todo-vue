@@ -28,7 +28,7 @@ const onSubmit = () => {
     >
       <input
         type="text"
-        class="w-[28rem] rounded-ss-md h-10 text-gray-400 focus:outline-none px-3 border-2 border-purple-300 border-r-0"
+        class="rounded-ss-md h-10 md:w-[35rem] text-gray-400 focus:outline-none px-3 border-2 border-purple-300 border-r-0"
         :class="{ 'border-red-400': todo.invalid }"
         v-model="todo.content"
         id=""

@@ -61,7 +61,7 @@
 </script>
 
 <template>
-  <h2 class="text-3xl text-center  mt-20 font-bold text-gray-700">
+  <h2 class="text-3xl text-center  mt-20 font-bold text-gray-200">
     Create Todo
   </h2>
   <TodoCreator @form-submitted="addTodo" />
@@ -69,7 +69,7 @@
     <Icon icon="noto-v1:sad-but-relieved-face" width="20"></Icon>
     <p class="text-sm text-gray-600 ">You have no todo's to complete ! Add one!</p>
   </p>
-  <Draggable  class="text-center   flex items-center flex-col  "  
+  <Draggable  class="flex items-center flex-col"  
    v-model="todoList" 
    tag="ul"
    drag-class="drag"
