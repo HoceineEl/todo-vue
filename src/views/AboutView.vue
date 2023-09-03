@@ -20,9 +20,6 @@
       <div class="mb-6">
         <h2 class="text-xl font-semibold mb-2">How to Use</h2>
         <ol class="list-decimal pl-6 text-gray-700">
-          <!-- Existing How to Use steps -->
-          <!-- ... -->
-
           <!-- New Drag and Drop Instruction -->
           <li class="mb-2">
             To rearrange your tasks, you can now use

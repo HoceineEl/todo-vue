@@ -61,7 +61,7 @@
 </script>
 
 <template>
-  <h2 class="text-3xl text-center mt-20 font-bold text-gray-700">
+  <h2 class="text-3xl text-center  mt-20 font-bold text-gray-700">
     Create Todo
   </h2>
   <TodoCreator @form-submitted="addTodo" />
@@ -69,26 +69,26 @@
     <Icon icon="noto-v1:sad-but-relieved-face" width="20"></Icon>
     <p class="text-sm text-gray-600 ">You have no todo's to complete ! Add one!</p>
   </p>
+  <Draggable  class="text-center   flex items-center flex-col  "  
+   v-model="todoList" 
+   tag="ul"
+   drag-class="drag"
+   ghost-class="ghost"
+   >
+   <template #item="{ element: todo,index }">
+     <TodoItem
+       @edit-todo="editTodo"
+       @delete-todo="deleteTodo"
+       @toggle-complete="onToggleComplete"
+       @complete-editing="onCompleteEditing"
+       @update-todo="onUpdateTodo"
+       :key="todo.id"
+       :todo="todo"
+       :index="index"
+     ></TodoItem>
+   </template>
+ </Draggable>
 
- <Draggable  class="text-center flex items-center flex-col"  
-  v-model="todoList" 
-  tag="ul"
-  drag-class="drag"
-  ghost-class="ghost"
-  >
-  <template #item="{ element: todo,index }">
-    <TodoItem
-      @edit-todo="editTodo"
-      @delete-todo="deleteTodo"
-      @toggle-complete="onToggleComplete"
-      @complete-editing="onCompleteEditing"
-      @update-todo="onUpdateTodo"
-      :key="todo.id"
-      :todo="todo"
-      :index="index"
-    ></TodoItem>
-  </template>
-</Draggable>
 
   <p class="flex gap-4 justify-center m-4 transition-all duration-1000  " v-show="todosCompleted && todoList.length>0">
     <Icon icon="noto-v1:party-popper" width="20"></Icon>
@@ -99,8 +99,12 @@
 .drag .drag-div {
   transform: rotate(10deg) !important;
 }
-.ghost input , .ghost div {
+.ghost {
+  background-color: aliceblue;
+}
+.ghost input , .ghost p ,.ghost div.ms-3{
   visibility: hidden;
   transition: 1s;
 }
+
 </style>
